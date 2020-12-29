@@ -1,0 +1,12 @@
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #8842d5;
+    position: fixed; /* The position will be constant */
+    overflow: auto; /* This enables scrolling */
+    li {
+        display: inline;
+    }
+}
