@@ -1,3 +1,8 @@
+:root {
+    --black: #1c1f33;
+    --font-title: "Playfair Display", serif;
+}
+
 @font-face {
     font-family: 'NewsPaper';
     src: local('NewsPaper'), url('../../components/fonts/OldNewspaperFont.ttf') format('truetype');
@@ -5,34 +10,39 @@
 }
 
 .header {
-    display: block;
-    .header-title {
-        margin: 20px 0 20px 0;
-        font-family: 'NewsPaper', serif;
-        font-size: 130px;
-        @media screen and (max-width: 550px){
-            font-size: 50px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    h1 {
+        font: 50px/1 "Playfair Display SC";
+        text-align: center;
+        @media (min-width: 700px) {
+            font: 70px/1 "Playfair Display SC";
         }
     }
-    .column-main {
-        float: left;
-        width: 70%;
-    }
-
-    .column-side {
-        float: left;
-        width: 15%;
-    }
+    
 }
 
 .navbar {
-    nav {
+    margin: 0 auto;
+    aside {
+        text-align: center;
+        padding: 3px 0;
+        border: solid var(--black);
+        border-width: 2px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 1.5rem 0;
+        @media (min-width: 550px) {
+            margin: 0;
+        }
         ul{ 
             margin: 0 auto;
+            display: flex;
+            align-items: center;
+            border: solid var(--black);
+            border-width: 1px 0;
             padding: 0 0 0 40px;
-            // list-style-type: inside;
-            border: 1px solid black;
-            border-radius: 3px;
             width: 97%;
             margin-left: 10px;
             padding-left: 10px;

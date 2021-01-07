@@ -6,10 +6,10 @@ const NavBar: FunctionComponent = () => {
     return (
         <div>
             <div className="header">
-                <div className="header-title">Iqbal&apos;s Chronicle</div>
+                <h1>Iqbal&apos;s Chronicle</h1>
             </div>
             <div className="navbar">
-                <nav>
+                <aside>
                     <ul>
                         <li>
                             <NavLink to="/">Home</NavLink>
@@ -27,7 +27,7 @@ const NavBar: FunctionComponent = () => {
                             <NavLink to="/contact">Contact</NavLink>
                         </li>
                     </ul>
-                </nav>
+                </aside>
             </div>
         </div>
     );
