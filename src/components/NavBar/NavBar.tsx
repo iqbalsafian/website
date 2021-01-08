@@ -1,8 +1,22 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+import moment from 'moment';
 import './NavBar.scss';
 
 const NavBar: FunctionComponent = () => {
+    const [utcDate, setUtcDate] = useState({});
+
+    useEffect(() => {
+        async function getUtcDate() {
+            const result = await axios('http://worldclockapi.com/api/json/utc/now');
+            setUtcDate(result);
+            setUtcDate('2021-01-07T08:16Z');
+        }
+
+        getUtcDate();
+    }, []);
+
     return (
         <div>
             <div className="header container">
@@ -13,7 +27,8 @@ const NavBar: FunctionComponent = () => {
                     </div>
                     <div className="col-sm-2">
                         <div className="dates">
-                            <span>since 1983</span>
+                            <span className="block">{moment(utcDate).format('MMMM Do YYYY')}</span>
+                            <span className="block">since 1983</span>
                         </div>
                     </div>
                 </div>
