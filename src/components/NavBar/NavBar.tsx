@@ -9,7 +9,12 @@ interface IUtcDate {
 }
 
 interface IRandomQuote {
+    contents: Record<string, unknown>;
+}
+
+interface IJsonQuote {
     quoteText: string;
+    quoteAuthor: string;
 }
 
 const NavBar: FunctionComponent = () => {
@@ -27,16 +32,20 @@ const NavBar: FunctionComponent = () => {
 
     useEffect(() => {
         const getRandomQuote = async (): Promise<void> => {
+            const requestUri = `https://api.allorigins.win/get?url=${encodeURIComponent(
+                'https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json',
+            )}`;
             return await axios
-                .get<IRandomQuote>('https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json')
+                .get<IRandomQuote>(requestUri)
                 .then((response) => {
                     setRandomQuote(response?.data);
-                    console.log(response?.data);
                 })
                 .catch((err) => console.log(err));
         };
         getRandomQuote();
     }, []);
+
+    const jsonparsed: IJsonQuote = JSON.parse(`${randomQuote?.contents}`) || undefined;
 
     return (
         <div>
@@ -44,8 +53,8 @@ const NavBar: FunctionComponent = () => {
                 <div className="row">
                     <div className="col-sm-2">
                         <div className="quote">
-                            {randomQuote?.quoteText}
-                            <span className="block">a</span>
+                            {jsonparsed?.quoteText}
+                            <span className="block">~ {jsonparsed.quoteAuthor}</span>
                         </div>
                     </div>
                     <div className="col-sm-8">
