@@ -38,7 +38,6 @@ const NavBar: FunctionComponent = () => {
             return await axios
                 .get<IRandomQuote>(requestUri)
                 .then((response) => {
-                    console.log(response?.data);
                     setRandomQuote(response?.data);
                 })
                 .catch((err) => console.log('errorrssss', err));
