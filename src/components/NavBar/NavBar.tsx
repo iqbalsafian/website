@@ -38,14 +38,16 @@ const NavBar: FunctionComponent = () => {
             return await axios
                 .get<IRandomQuote>(requestUri)
                 .then((response) => {
+                    console.log(response?.data);
                     setRandomQuote(response?.data);
                 })
-                .catch((err) => console.log(err));
+                .catch((err) => console.log('errorrssss', err));
         };
         getRandomQuote();
     }, []);
 
-    const jsonparsed: IJsonQuote = JSON.parse(`${randomQuote?.contents}`) || undefined;
+    const jsonparsed: IJsonQuote =
+        (randomQuote?.contents?.length && JSON.parse(`${randomQuote?.contents}`)) || undefined;
 
     return (
         <div>
@@ -54,7 +56,7 @@ const NavBar: FunctionComponent = () => {
                     <div className="col-sm-2">
                         <div className="quote">
                             {jsonparsed?.quoteText}
-                            <span className="block">~ {jsonparsed.quoteAuthor}</span>
+                            <span className="block">~ {jsonparsed?.quoteAuthor}</span>
                         </div>
                     </div>
                     <div className="col-sm-8">

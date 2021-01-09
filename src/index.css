@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'BreitkopfFraktur.ttf';
+  src: local('BreitkopfFraktur'), url('./components/fonts/BreitkopfFraktur.ttf') format('truetype');
+}
 
 body {
   margin: 0;

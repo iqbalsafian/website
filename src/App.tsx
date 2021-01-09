@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Home from './components/Home';
 import AboutMe from './components/AboutMe';
+import JobHistory from './components/JobHistory';
 import NavBar from './components/NavBar';
 import RightPanel from './components/RightPanel';
 import Footer from './components/Footer';
@@ -20,6 +21,9 @@ const App: React.FC = () => {
                                 <Switch>
                                     <Route path="/about-me">
                                         <AboutMe />
+                                    </Route>
+                                    <Route path="/job-history">
+                                        <JobHistory />
                                     </Route>
                                     <Route path="/">
                                         <Home />
