@@ -20,6 +20,7 @@ const Home: FunctionComponent = () => {
                     &quot;I have worked for various of fields and domains in differentc companies but my passion has
                     always been developing applications with latest technologies&quot;, said Iqbal.
                 </p>
+                <h4>The Beginning</h4>
                 <p>
                     He began his career in ICT industry back in December 2004, 3 days before the deadliest Tsunami ever
                     recorded in history that hit 3 ASEAN countries other than India.
@@ -39,6 +40,7 @@ const Home: FunctionComponent = () => {
                     use software developer or software engineer for our title. We were all all-rounders and sometimes we
                     did dev-ops stuff too.
                 </p>
+                <h4>Mobile Solutions</h4>
                 <p>
                     &quot;Also I first learned about mobile development technologies starting from 2005 and it was a bit
                     challenging because everything has to be compressed not only because of to fit the small screen

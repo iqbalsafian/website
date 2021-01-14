@@ -7,7 +7,7 @@ import JobHistory from './components/JobHistory';
 import NavBar from './components/NavBar';
 import RightPanel from './components/RightPanel';
 import Footer from './components/Footer';
-import './App.css';
+import './App.scss';
 
 const App: React.FC = () => {
     return (
@@ -15,9 +15,9 @@ const App: React.FC = () => {
             <HelmetProvider>
                 <div className="App">
                     <NavBar />
-                    <div className="container pt10">
+                    <div className="pt10">
                         <div className="row">
-                            <div className="col-sm-9 main-content">
+                            <div className="col-sm-12 col-md-9 col-lg-9 main-content">
                                 <Switch>
                                     <Route path="/about-me">
                                         <AboutMe />
@@ -30,7 +30,7 @@ const App: React.FC = () => {
                                     </Route>
                                 </Switch>
                             </div>
-                            <div className="col-sm-3">
+                            <div className="col-sm-hidden col-md-3 col-lg-3">
                                 <RightPanel />
                             </div>
                         </div>

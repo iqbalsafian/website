@@ -13,6 +13,9 @@
   margin-top: 30px;
   text-align: justify;
   /* padding: 5em 10em 15em 5em; */
+  @media screen and (max-width: 550px) {
+    width: 95%;
+  }
 }
 
 .block {
@@ -21,6 +24,9 @@
 
 .pt10 {
   padding-top: 10px;
+  @media screen and (max-width: 550px){
+    padding-top: 0px;
+  }
 }
 
 .text-center {
@@ -32,7 +38,9 @@
 }
 
 .main-content {
-  border-right: 1px solid black;
+  @media screen and (min-width: 550px) {
+    border-right: 1px solid black;
+  }
 }
 
 .border-bottom {

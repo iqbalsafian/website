@@ -3,6 +3,11 @@
   src: local('BreitkopfFraktur'), url('./components/fonts/BreitkopfFraktur.ttf') format('truetype');
 }
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

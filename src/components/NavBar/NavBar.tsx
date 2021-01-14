@@ -2,6 +2,7 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import moment from 'moment';
+import HamburgerMenu from '../HamburgerMenu';
 import './NavBar.scss';
 
 interface IUtcDate {
@@ -47,21 +48,23 @@ const NavBar: FunctionComponent = () => {
 
     const jsonparsed: IJsonQuote =
         (randomQuote?.contents?.length && JSON.parse(`${randomQuote?.contents}`)) || undefined;
-
     return (
         <div>
             <div className="header container">
                 <div className="row">
-                    <div className="col-sm-2">
+                    <div className="hidden-sm col-md-2 col-lg-2">
                         <div className="quote">
                             {jsonparsed?.quoteText}
                             <span className="block">~ {jsonparsed?.quoteAuthor}</span>
                         </div>
                     </div>
-                    <div className="col-sm-8">
+                    <div className="col-sm-11 col-md-8 col-lg-8">
                         <h1>Iqbal&apos;s Chronicle</h1>
                     </div>
-                    <div className="col-sm-2">
+                    <div className="col-sm-1 hidden-lg hidden-md">
+                        <HamburgerMenu />
+                    </div>
+                    <div className="hidden-sm col-md-2 col-lg-2">
                         <div className="dates">
                             <span className="block">{moment(utcDate?.currentDateTime).format('MMMM Do YYYY')}</span>
                             <span className="block">since 1983</span>
