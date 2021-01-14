@@ -76,19 +76,29 @@ const NavBar: FunctionComponent = () => {
                 <aside>
                     <ul>
                         <li>
-                            <NavLink to="/">Home</NavLink>
+                            <NavLink to="/" exact activeClassName="active-navlink">
+                                Home
+                            </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/about-me">About Me</NavLink>
+                            <NavLink to="/about-me" exact activeClassName="active-navlink">
+                                About Me
+                            </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/job-history">Job History</NavLink>
+                            <NavLink to="/job-history" exact activeClassName="active-navlink">
+                                Job History
+                            </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/works">Works</NavLink>
+                            <NavLink to="/works" exact activeClassName="active-navlink">
+                                Works
+                            </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/contact">Contact</NavLink>
+                            <NavLink to="/contact" exact activeClassName="active-navlink">
+                                Contact
+                            </NavLink>
                         </li>
                     </ul>
                 </aside>
