@@ -47,7 +47,8 @@ const NavBar: FunctionComponent = () => {
     }, []);
 
     const jsonparsed: IJsonQuote =
-        (randomQuote?.contents?.length && JSON.parse(`${randomQuote?.contents}`)) || undefined;
+        (randomQuote?.contents?.length && JSON.parse(`${JSON.stringify(randomQuote?.contents)}`)) || undefined;
+    console.log(randomQuote);
     return (
         <div>
             <div className="header container">
@@ -91,8 +92,8 @@ const NavBar: FunctionComponent = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/works" exact activeClassName="active-navlink">
-                                Works
+                            <NavLink to="/recent-works" exact activeClassName="active-navlink">
+                                Recent Works
                             </NavLink>
                         </li>
                         <li>
