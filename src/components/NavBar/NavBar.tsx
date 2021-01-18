@@ -51,7 +51,7 @@ const NavBar: FunctionComponent = () => {
     console.log(randomQuote);
     return (
         <div>
-            <div className="header container">
+            <div className="header container" style={{ width: '100%' }}>
                 <div className="row">
                     <div className="hidden-sm col-md-2 col-lg-2">
                         <div className="quote">
