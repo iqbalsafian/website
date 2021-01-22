@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect } from 'react';
-import { RootStateOrAny, useSelector } from 'react-redux';
+import { RootStateOrAny, useSelector, useDispatch } from 'react-redux';
 import { getNews } from '../../redux/actions';
 import './RightPanel.scss';
 
@@ -12,11 +12,11 @@ interface theNews {
 
 const RightPanel: FunctionComponent = () => {
     const news = useSelector((state: RootStateOrAny) => state.news);
-    const allState = useSelector((state: RootStateOrAny) => state);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        getNews();
-        console.log(allState);
+        dispatch(getNews());
+        console.log('all news', news);
     }, []);
 
     return (
@@ -26,16 +26,18 @@ const RightPanel: FunctionComponent = () => {
                 &#8287; Flash News
             </h3>
             {news?.map((theNews: theNews) => {
-                <article>
-                    <div>
-                        <h1>{theNews.title}</h1>
-                        <img className="imgStyle" src={theNews.urlToImage} alt="" />
-                        <h4>{theNews.description}</h4>
-                        <a href={theNews.url} target="_blank" rel="noreferrer">
-                            READ MORE
-                        </a>
-                    </div>
-                </article>;
+                return (
+                    <article key={theNews.title}>
+                        <div>
+                            <h4>{theNews.title}</h4>
+                            <img className="imgStyle" src={theNews.urlToImage} alt="" />
+                            <h4>{theNews.description}</h4>
+                            <a href={theNews.url} target="_blank" rel="noreferrer">
+                                READ MORE
+                            </a>
+                        </div>
+                    </article>
+                );
             })}
         </div>
     );
