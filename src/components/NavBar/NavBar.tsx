@@ -48,7 +48,6 @@ const NavBar: FunctionComponent = () => {
 
     const jsonparsed: IJsonQuote =
         (randomQuote?.contents?.length && JSON.parse(`${JSON.stringify(randomQuote?.contents)}`)) || undefined;
-    console.log(randomQuote);
     return (
         <div>
             <div className="header container" style={{ width: '100%' }}>
